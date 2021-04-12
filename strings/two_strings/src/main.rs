@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/two-strings
+
 use std::collections::HashSet;
 use std::io;
 use std::iter::FromIterator;

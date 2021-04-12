@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/ctci-ransom-note
+
 fun checkMagazine(magazine: Array<String>, note: Array<String>): String {
     val magazineWords = magazine.groupingBy { it }.eachCount()
     val noteWords = note.groupingBy { it }.eachCount()

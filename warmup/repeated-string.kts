@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/repeated-string
+
 fun repeatedString(s: String, n: Long): Long {
     val repeated = n / s.length
     val remaining = n - (s.length * repeated)

@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/game-of-thrones
+
 use std::{collections::HashMap, io};
 
 fn game_of_thrones(s: &str) -> String {

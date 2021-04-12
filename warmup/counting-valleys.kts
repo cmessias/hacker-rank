@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/counting-valleys/
+
 fun countingValleys(steps: Int, path: String): Int {
     val (nValleys, _depth) = path.fold(Pair(0, 0), { acc, step ->
         val toDepth = if (step == 'U') 1 else -1

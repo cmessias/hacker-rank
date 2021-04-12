@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/sock-merchant
+
 fun sockMerchant(n: Int, ar: Array<Int>): Int {
     val socksGroupedByPairs = ar.fold(HashMap<Int, Int>()) { acc, sock ->
         acc.put(sock, acc.getOrDefault(sock, 0) + 1)
