@@ -1,18 +1,16 @@
 use std::collections::HashSet;
-use std::iter::FromIterator;
 use std::io;
+use std::iter::FromIterator;
 
 fn two_strings(s1: &str, s2: &str) -> String {
     let s1: HashSet<char> = HashSet::from_iter(s1.to_lowercase().chars());
     let s2 = s2.to_lowercase();
 
-    for c in s2.chars() {
-        if s1.contains(&c) {
-            return String::from("YES");
-        }
-    }
-
-    return String::from("NO");
+    return if s2.chars().any(|c| s1.contains(&c)) {
+        String::from("YES")
+    } else {
+        String::from("NO")
+    };
 }
 
 fn main() {
@@ -36,7 +34,7 @@ mod test {
     use crate::two_strings;
 
     #[test]
-    fn test_sample(){
+    fn test_sample() {
         assert_eq!(two_strings("and", "art"), "YES");
         assert_eq!(two_strings("be", "car"), "NO");
         assert_eq!(two_strings("hello", "world"), "YES");
