@@ -17,8 +17,8 @@ defmodule Anagram do
 
   defp frequencies(list) do
     list
-    |> Enum.reduce(%{}, fn (elem, count) ->
-         Map.update(count, elem, 1, &(&1 + 1))
+    |> Enum.reduce(%{}, fn (elem, acc) ->
+         Map.update(acc, elem, 1, &(&1 + 1))
        end)
   end
 end
