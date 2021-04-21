@@ -41,10 +41,10 @@ int32_t pop(struct heap *h)
         }
 
         int32_t top = h->array[0];
-         h->array[0] = h->array[h->heap_size - 1];
-         h->heap_size--;
-         heapify_down(h, 0);
-         return top;
+        h->array[0] = h->array[h->heap_size - 1];
+        h->heap_size--;
+        heapify_down(h, 0);
+        return top;
 }
 
 void heapify_down(struct heap *h, size_t parent)
