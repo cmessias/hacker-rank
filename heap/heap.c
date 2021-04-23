@@ -11,7 +11,7 @@ void heapify_up(struct heap *h, size_t child);
 void heapify_down(struct heap *h, size_t parent);
 void swap(int32_t *a, int32_t *b);
 
-size_t parent_node(size_t i) {return (i - 1) / 2; }
+size_t parent_node(size_t i) { return (i - 1) / 2; }
 size_t left_node(size_t i) { return 2 * i + 1; }
 size_t right_node(size_t i) { return 2 * i + 2; }
 
