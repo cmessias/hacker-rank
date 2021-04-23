@@ -32,7 +32,7 @@ struct heap make_heap(int32_t array[], uint32_t n)
         return h;
 }
 
-int32_t peek(struct heap h) { return h.array[0]; }
+int32_t peek(struct heap *h) { return h->array[0]; }
 
 int32_t pop(struct heap *h)
 {
