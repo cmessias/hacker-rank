@@ -2,9 +2,9 @@
 #include <stdint.h>
 
 struct heap {
-    uint32_t heap_size;
-    uint32_t capacity;
-    int32_t *array;
+        uint32_t heap_size;
+        uint32_t capacity;
+        int32_t *array;
 };
 
 void heapify_up(struct heap *h, size_t child);
@@ -103,25 +103,25 @@ void print_heap(struct heap *h)
 
 int main()
 {
-  int32_t arr[] = {1, 3, 5, 4};
-  uint32_t n = sizeof(arr) / sizeof(arr[0]);
+        int32_t arr[] = {1, 3, 5, 4};
+        uint32_t n = sizeof(arr) / sizeof(arr[0]);
 
-  struct heap h = make_heap(arr, n);
-  print_heap(&h);
-  pop(&h);
-  print_heap(&h);
-  pop(&h);
-  print_heap(&h);
-  pop(&h);
-  print_heap(&h);
-  insert(&h, 99);
-  print_heap(&h);
-  pop(&h);
-  print_heap(&h);
-  pop(&h);
-  print_heap(&h);
-  insert(&h, 10);
-  print_heap(&h);
-  insert(&h, 11);
-  print_heap(&h);
+        struct heap h = make_heap(arr, n);
+        print_heap(&h);
+        pop(&h);
+        print_heap(&h);
+        pop(&h);
+        print_heap(&h);
+        pop(&h);
+        print_heap(&h);
+        insert(&h, 99);
+        print_heap(&h);
+        pop(&h);
+        print_heap(&h);
+        pop(&h);
+        print_heap(&h);
+        insert(&h, 10);
+        print_heap(&h);
+        insert(&h, 11);
+        print_heap(&h);
 }
