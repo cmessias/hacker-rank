@@ -1,2 +1,2 @@
 # hacker-rank
-Hacker Rank challenge solutions written in Kotlin.
+Hacker Rank challenge solutions.
