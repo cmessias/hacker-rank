@@ -22,42 +22,53 @@ impl Query {
             _ => panic!("unknown query: {}", values[0]),
         };
     }
+}
 
-    fn run(queries: &[Query]) {
-        let mut insert_stack: Vec<i32> = Vec::with_capacity(queries.len());
-        let mut pop_stack: Vec<i32> = Vec::with_capacity(queries.len());
+struct Queue {
+    insert_stack: Vec<i32>,
+    pop_stack: Vec<i32>,
+}
 
+impl Queue {
+    fn with_capacity(n: usize) -> Queue {
+        Queue {
+            insert_stack: Vec::with_capacity(n),
+            pop_stack: Vec::with_capacity(n),
+        }
+    }
+
+    fn run(&mut self, queries: &[Query]) {
         for query in queries {
             match query {
-                Query::Enqueue(element) => insert_stack.push(*element),
-                Query::Dequeue => {
-                    if pop_stack.len() > 0 {
-                        pop_stack.pop();
-                    } else {
-                        while let Some(top) = insert_stack.pop() {
-                            pop_stack.push(top);
-                        }
-                        pop_stack.pop();
-                    }
+                Query::Enqueue(element) => {
+                    self.insert_stack.push(*element);
                 }
-                Query::Print =>
-                    if pop_stack.len() > 0 {
-                        println!("{}", pop_stack.last().unwrap())
-                    } else {
-                        while let Some(top) = insert_stack.pop() {
-                            pop_stack.push(top);
-                        }
-                        println!("{}", pop_stack.last().unwrap())
-                    }
+                Query::Dequeue => {
+                    self.prepare_top();
+                    self.pop_stack.pop();
+                }
+                Query::Print => {
+                    self.prepare_top();
+                    println!("{}", self.pop_stack.last().unwrap())
+                }
+            }
+        }
+    }
+
+    fn prepare_top(&mut self) {
+        if self.pop_stack.is_empty() {
+            while let Some(top) = self.insert_stack.pop() {
+                self.pop_stack.push(top);
             }
         }
     }
 }
 
+
 fn main() {
     let mut input = String::new();
     io::stdin().read_line(&mut input).unwrap();
-    let _n: usize = input.trim().parse().unwrap();
+    let n: usize = input.trim().parse().unwrap();
 
     let queries: Vec<Query> = io::stdin()
         .lock()
@@ -65,5 +76,6 @@ fn main() {
         .map(|s| Query::from_string(&s.unwrap()))
         .collect();
 
-    Query::run(&queries);
+    let mut queue = Queue::with_capacity(n);
+    queue.run(&queries);
 }
