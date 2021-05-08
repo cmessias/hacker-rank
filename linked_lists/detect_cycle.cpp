@@ -16,16 +16,13 @@ bool has_cycle(Node* head) {
         return false;
     }
     
-    Node* tortoise = head;
-    Node* hare = head->next;
-    
-    while (hare != nullptr && hare->next != nullptr) {
+    for (Node* tortoise = head, * hare = head->next;
+        hare != nullptr && hare->next != nullptr;
+        tortoise = tortoise->next, hare = hare->next->next)
+    {
         if (hare == tortoise) {
             return true;
         }
-        
-        tortoise = tortoise->next;
-        hare = hare->next->next;
     }
     
     return false;
