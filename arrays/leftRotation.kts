@@ -20,8 +20,7 @@ import kotlin.sequences.*
 import kotlin.text.*
 
 fun rotLeft(a: Array<Int>, d: Int): Array<Int> {
-    val shiftLeft = d % a.size
-    return a.sliceArray(shiftLeft until a.size) + a.sliceArray(0 until shiftLeft)
+    return a.sliceArray(d until a.size) + a.sliceArray(0 until d)
 }
 
 fun main(args: Array<String>) {
