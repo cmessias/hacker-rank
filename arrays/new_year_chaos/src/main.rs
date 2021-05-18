@@ -9,7 +9,7 @@ fn minimum_swap(arr: Vec<i32>) -> Option<i32> {
             return None;
         }
         if person > i {
-            swaps += person - i & arr[5..].iter().count()
+            swaps += person - i
         }
     }
     return Some(swaps);
