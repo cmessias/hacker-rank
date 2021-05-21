@@ -26,5 +26,5 @@ fn is_valid_string(s: &str) -> bool {
 fn main() {
     let mut input = String::new();
     io::stdin().read_line(&mut input).unwrap();
-    println!("{}", if is_valid_string(&input.trim()) { "YES" } else { "NO " })
+    println!("{}", if is_valid_string(&input.trim()) { "YES" } else { "NO" })
 }
