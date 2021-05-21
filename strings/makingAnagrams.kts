@@ -1,10 +1,13 @@
+// https://www.hackerrank.com/challenges/ctci-making-anagrams/
+// Code golf, fewest lines wins
+
 import kotlin.math.absoluteValue
 
 fun makeAnagram(a: String, b: String): Int {
-    val frequencies = HashMap<Char, Int>()
-    a.forEach { frequencies.put(it, frequencies.getOrDefault(it, 0) + 1) }
-    b.forEach { frequencies.put(it, frequencies.getOrDefault(it, 0) - 1) }
-    return frequencies.values.map { it.absoluteValue }.sumOf { it }
+    val f = HashMap<Char, Int>()
+    a.groupingBy { it }.eachCount().forEach { f.put(it.key, it.value) }
+    b.groupingBy { it }.eachCount().forEach { f.put(it.key, f.getOrDefault(it.key, 0) - it.value) }
+    return f.values.map { it.absoluteValue }.sumOf { it }
 }
 
 val a = readLine()!!

@@ -1,5 +1,5 @@
 // https://www.hackerrank.com/challenges/alternating-characters/
-// code golf, fewest lines wins
+// Code golf, fewest lines wins
 
 use std::io;
 use std::io::BufRead;
