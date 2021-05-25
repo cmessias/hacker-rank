@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/pairs/
+
 use std::collections::HashSet;
 use std::iter::FromIterator;
 
