@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/fraudulent-activity-notifications/problem
+
 /*
 // Borrow checker does not let me sort the borrowed slices
 fn fraudulent_notifications(expenditure: Vec<u32>, d: usize) -> u32 {
