@@ -1,3 +1,5 @@
+-- https://www.hackerrank.com/challenges/ctci-ice-cream-parlor
+
 function whatFlavors(costs, money)
     local map = {}
     for i, cost in ipairs(costs) do
