@@ -1,5 +1,5 @@
 // https://www.hackerrank.com/challenges/binary-search-tree-lowest-common-ancestor/
-// Tree definition provided by Hacker Rank
+// Tree definition and IO provided by Hacker Rank
 
 #include <bits/stdc++.h>
 
