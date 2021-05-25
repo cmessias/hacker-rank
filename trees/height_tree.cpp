@@ -1,5 +1,5 @@
 // https://www.hackerrank.com/challenges/tree-height-of-a-binary-tree/
-// Tree declaration and provided by Hacker Rank
+// Tree declaration and IO provided by Hacker Rank
 
 #include <bits/stdc++.h>
 
