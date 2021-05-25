@@ -5,9 +5,8 @@ function whatFlavors(costs, money)
     for i, cost in ipairs(costs) do
         if map[money - cost] ~= nil then
             return math.min(map[money - cost], i), math.max(map[money-cost], i)
-        else
-            map[cost] = i
         end
+        map[cost] = i
     end
 end
 
