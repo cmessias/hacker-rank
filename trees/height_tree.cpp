@@ -1,4 +1,6 @@
-/* The tree node has data, left child and right child 
+/* https://www.hackerrank.com/challenges/tree-height-of-a-binary-tree
+
+The tree node has data, left child and right child 
 class Node {
     int data;
     Node* left;
