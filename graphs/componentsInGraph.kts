@@ -6,7 +6,7 @@ fun make_set(n: Int): Array<Int> {
     return (0..(2 * n)).map { it }.toTypedArray()
 }
 
-fun find(x: Int, parent: Array<Int>): Int {
+tailrec fun find(x: Int, parent: Array<Int>): Int {
     return if (x == parent[x]) { x }
     else { find(parent[x], parent) }
 }
