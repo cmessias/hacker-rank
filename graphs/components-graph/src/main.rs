@@ -1,3 +1,6 @@
+// https://www.hackerrank.com/challenges/components-in-graph/
+// Code golf, fewest lines wins
+
 use std::cmp;
 use std::collections::HashMap;
 use std::io::BufRead;
@@ -25,12 +28,8 @@ fn count_components(parent: &[usize]) -> (u32, u32) {
         *components.entry(find(x, parent)).or_insert(0) += 1;
     }
 
-    return components
-        .iter()
-        .filter(|(a, b)| **b > 1)
-        .fold((parent.len() as u32, 0), |(min, max), (key, value)| {
-            (cmp::min(min, *value), cmp::max(max, *value))
-        });
+    let components = components.values().filter(|x| **x > 1);
+    return (*components.clone().min().unwrap(), * components.max().unwrap());
 }
 
 fn main() {
@@ -49,6 +48,8 @@ fn main() {
     for (x, y) in connections {
         union(x, y, &mut parent)
     }
+
+    println!("{:?}", count_components(&parent))
 }
 
 fn split_pair(s: &str) -> (usize, usize) {
