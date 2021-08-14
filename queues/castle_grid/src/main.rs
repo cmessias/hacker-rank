@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/castle-on-the-grid
+
 use std::collections::{HashMap, HashSet, VecDeque};
 use std::io;
 use std::io::BufRead;
